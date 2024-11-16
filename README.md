@@ -8,13 +8,13 @@ A web app developed using React and the TMDB API to implement a local web server
 
 ## Features (WIP)
 ### To-do
-- [] Two additional static endpoints (TBD)
-- [] Parameterized endpoints
-- [] Caching with react-query on all endpoints
-- [] Implementation of filtering, sorting/searching features
-- [] Implement responsive UI layout
-- [] Third-party authentication with Firebase
-- [] Develop README.md further 
+- [ ] Two additional static endpoints (TBD)
+- [ ] Parameterized endpoints
+- [ ] Caching with react-query on all endpoints
+- [ ] Implementation of filtering, sorting/searching features
+- [ ] Implement responsive UI layout
+- [ ] Third-party authentication with Firebase
+- [ ] Develop README.md further 
 
 ## Setup requirements
 In order to host clone and use this repository for yourself:
