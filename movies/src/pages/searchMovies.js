@@ -32,7 +32,7 @@ const SearchPage = (props) => {
 
   return (
     <PageTemplate
-      title="Search Results for: + {query}" 
+      title="Search Results"
       movies={movies}
       action={(movie) => {
         return <AddMustWatchIcon movie={movie} />
