@@ -18,9 +18,7 @@ Features that were added on top of the original react-movies-lab app:
 - [x] Parameterized endpoints (search function + actor details page)
 - [x] Caching with react-query on all endpoints
 - [x] Implementation of filtering, sorting/searching features (search feature implemented for movies)
-- [ ] Implement responsive UI layout
-- [ ] Third-party authentication with Firebase
-- [ ] Pagination implementation to the search function
+- [x] Implement responsive UI layout
 - [x] Develop README.md further 
 
 ## Setup requirements
@@ -40,6 +38,9 @@ Routes that were added on top of the original react-movies-lab app:
 ## Independent learning
 Technologies that were utilized in this project that were outside the topics covered in course material:
 
-### Pagination 
+### Theme changing
 
-### Firebase
+Resources used to research this feature:
+https://semaphoreci.com/blog/dark-mode-reactjs-material-ui
+
+### Responsive UI
