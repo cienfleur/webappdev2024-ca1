@@ -12,14 +12,15 @@ Features that were added on top of the original react-movies-lab app:
 - Additional sorting filters added to movie list views
 - Pagination of movie search view page, allowing you to browse through multiple pages of results
 - Movie details page lists cast
-- Added actor page, includes movies they've acted in which allows for linking between movies and actors
+- Added actor page
 ### To-do
 - [x] Two additional static endpoints (top movies + popular actors)
-- [ ] Parameterized endpoints
+- [x] Parameterized endpoints (search function + actor details page)
 - [x] Caching with react-query on all endpoints
-- [ ] Implementation of filtering, sorting/searching features
+- [x] Implementation of filtering, sorting/searching features (search feature implemented for movies)
 - [ ] Implement responsive UI layout
 - [ ] Third-party authentication with Firebase
+- [ ] Pagination implementation to the search function
 - [x] Develop README.md further 
 
 ## Setup requirements
