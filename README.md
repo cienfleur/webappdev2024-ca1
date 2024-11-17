@@ -6,13 +6,12 @@ Student ID: 20102083
 
 A web app developed using React and the TMDB API to implement a local web server that can display movies and movie details, as well as allow the user to view curate a list of favorites and movies that they plan to watch, akin to Letterboxd or IMDB.
 
-## Features (WIP)
+## Features
 Features that were added on top of the original react-movies-lab app:
 - Search bar, allowing you to search for movies according to a specific query
-- Additional sorting filters added to movie list views
-- Pagination of movie search view page, allowing you to browse through multiple pages of results
-- Movie details page lists cast
-- Added actor page
+- Light/dark mode switch toggle available throughout the web app
+- Added popular actors page, actor details view
+- Able to filter actors by country and search up by name
 ### To-do
 - [x] Two additional static endpoints (top movies + popular actors)
 - [x] Parameterized endpoints (search function + actor details page)
@@ -22,10 +21,20 @@ Features that were added on top of the original react-movies-lab app:
 - [x] Develop README.md further 
 
 ## Setup requirements
-In order to host clone and use this repository for yourself:
+
+A TMDB API key must be obtained in order for this program to run properly, which can be obtained at: https://www.themoviedb.org/settings/api
+
+Once an API key is generated, create a .env file in the `movies` folder with the following parameters:
+```
+REACT_APP_TMDB_KEY=... your API key value ...
+FAST_REFRESH=false
+```
 
 ## API endpoints
 API endpoints that were added on top of the original react-movies-lab app:
+
+- movies/top_rated - returns a list of the highest rated movies on TMDB
+- person/popular - returns a list of people on TMDB with the highest popularity rating
 
 ## Routing
 Routes that were added on top of the original react-movies-lab app:
@@ -44,3 +53,6 @@ Resources used to research this feature:
 https://semaphoreci.com/blog/dark-mode-reactjs-material-ui
 
 ### Responsive UI
+
+Resource for researching responsive UI using MUI:
+https://mui.com/material-ui/
