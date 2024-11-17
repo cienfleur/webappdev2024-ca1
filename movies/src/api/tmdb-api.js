@@ -32,8 +32,9 @@ export const getUpcomingMovies = () => {
 
 export const getSearchedMovies = (args) => {
   const [, query] = args.queryKey;
+  const {id} = query;
   return fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&query=${id}&page=1&include_adult=false`
   ).then((response) => {
     if (!response.ok) {
       return response.json().then((error) => {
@@ -112,4 +113,22 @@ export const getMovie = (args) => {
         // console.log(json.results);
         return json.results;
       });
+  };
+
+  export const getActor = (args) => {
+    const [, idPart] = args.queryKey;
+    const { id } = idPart;
+    return fetch(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then((response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+   });
   };

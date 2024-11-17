@@ -12,7 +12,6 @@ import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import TextField from '@mui/material/TextField';
-import List from '@mui/material/List';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -37,9 +36,8 @@ const SiteHeader = ({ history }) => {
     navigate(pageURL, { replace: true });
   };
 
-  const searchMovies = (pageURL) => {
-    const query = inputText;
-    navigate(`/search/?query=${inputText}`, { replace: true });
+  const searchMovies = (query) => {
+    navigate(`/search/${inputText}`);
   }
 
   const handleMenu = (event) => {
@@ -67,7 +65,7 @@ const SiteHeader = ({ history }) => {
           <div className="search">
             <TextField
               id="outlined-basic"
-              label="Search"
+              label="query"
               onChange={inputHandler}
               onKeyUp={(e) => {
                 if (e.key === "Enter") {
