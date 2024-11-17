@@ -10,8 +10,9 @@ A web app developed using React and the TMDB API to implement a local web server
 Features that were added on top of the original react-movies-lab app:
 - Search bar, allowing you to search for movies according to a specific query
 - Additional sorting filters added to movie list views
-- Pagination of movie list view pages, allowing you to browse through more than just the first page of results
-- Movie details page lists cast, recommended movies below, following a responsive UI to allow for resizing of window
+- Pagination of movie search view page, allowing you to browse through multiple pages of results
+- Movie details page lists cast
+- Added actor page, includes movies they've acted in which allows for linking between movies and actors
 ### To-do
 - [ ] Two additional static endpoints (TBD)
 - [ ] Parameterized endpoints
@@ -29,6 +30,11 @@ API endpoints that were added on top of the original react-movies-lab app:
 
 ## Routing
 Routes that were added on top of the original react-movies-lab app:
+
+- /movies/popular - static endpoint, lists top rated movies (slight misnomer)
+- actors - static endpoint, lists popular actors
+- actors/:id - parameterized endpoint, shows details about a specific actor
+- /movies/:id/recommendations - parameterized endpoint, lists recommended movies using a movie id as a parameter
 
 ## Independent learning
 Technologies that were utilized in this project that were outside the topics covered in course material:
