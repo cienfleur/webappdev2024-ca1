@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
 import HomePage from "./pages/homePage";
@@ -15,6 +15,9 @@ import PopularMoviesPage from "./pages/popularMoviesPage";
 import SearchPage from './pages/searchMovies';
 import ActorPage from './pages/actorDetailsPage';
 import ActorPopularPage from './pages/actorPopularPage';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Switch from '@mui/material/Switch';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,8 +29,33 @@ const queryClient = new QueryClient({
   },
 });
 
+
 const App = () => {
+
+  const [toggleDarkMode, setToggleDarkMode] = useState(true);
+
+  const toggleDarkTheme = () => {
+    setToggleDarkMode(!toggleDarkMode);
+  };
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: toggleDarkMode ? 'dark' : 'light', // handle the dark mode state on toggle
+      primary: {
+        main: '#cc80ff',
+
+      },
+      secondary: {
+        main: '#ffcc80',
+
+      },
+    },
+  });
+
   return (
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+    <Switch checked={toggleDarkMode} onChange={toggleDarkTheme} />
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
@@ -49,6 +77,7 @@ const App = () => {
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
+    </ThemeProvider>
   );
 };
 

@@ -60,8 +60,6 @@ export default function ActorCard({ actor, action }) {
       </CardContent>
       <CardActions disableSpacing>
       
-        {action(actor)}
-      
         <Link to={`/actors/${actor.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...

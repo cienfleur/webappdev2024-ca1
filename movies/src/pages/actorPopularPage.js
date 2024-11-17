@@ -19,10 +19,12 @@ const ActorPopularPage = (props) => {
   }  
   const actors = data.results;
 
+  /*
   // Redundant, but necessary to avoid app crashing.
   const mustWatch = actors.filter(m => m.mustWatch)
   localStorage.setItem('mustWatch', JSON.stringify(mustWatch))
   const addMustWatch = (actorId) => true 
+  */
 
   return (
     <PageTemplate

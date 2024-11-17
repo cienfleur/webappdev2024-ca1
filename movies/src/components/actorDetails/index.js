@@ -21,7 +21,6 @@ const root = {
 const chip = { margin: 0.5 };
 
 const ActorDetails = ({ actor }) => {  // Don't miss this!
-    const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
@@ -50,23 +49,6 @@ const ActorDetails = ({ actor }) => {  // Don't miss this!
         <Chip label={`Birth place: ${actor.place_of_birth}`} />
       </Paper>
         <br />
-
-      <Fab
-        color="secondary"
-        variant="extended"
-        onClick={() =>setDrawerOpen(true)}
-        sx={{
-          position: 'fixed',
-          bottom: '1em',
-          right: '1em'
-        }}
-      >
-        <NavigationIcon />
-        Reviews
-      </Fab>
-      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <actorReviews actor={actor} />
-      </Drawer>
       </>
   );
 };
