@@ -54,7 +54,7 @@ export default function FilterMoviesCard(props) {
   return (
     <Card 
       sx={{
-        backgroundColor: "rgb(204, 204, 0)"
+        backgroundColor: "rgb(102, 102, 54)"
       }} 
       variant="outlined">
       <CardContent>
@@ -63,7 +63,8 @@ export default function FilterMoviesCard(props) {
           Filter the movies.
         </Typography>
         <TextField
-      sx={{...formControl}}
+      sx={{...formControl }}
+      inputProps={{ style: { color: "black" } }}
       id="filled-search"
       label="Search field"
       type="search"
