@@ -29,6 +29,24 @@ export const getUpcomingMovies = () => {
       throw error
   });
 };
+
+export const getSearchedMovies = (args) => {
+  const [, query] = args.queryKey;
+  return fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+  ).then((response) => {
+    if (!response.ok) {
+      return response.json().then((error) => {
+        throw new Error(error.status_message || "Something went wrong");
+      }
+      );
+    }
+    return response.json();
+  })
+  .catch((error) => {
+      throw error
+  });
+};
   
 export const getMovie = (args) => {
   //console.log(args)

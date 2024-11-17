@@ -37,6 +37,11 @@ const SiteHeader = ({ history }) => {
     navigate(pageURL, { replace: true });
   };
 
+  const searchMovies = (pageURL) => {
+    const query = inputText;
+    navigate(`/search/?query=${inputText}`, { replace: true });
+  }
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -66,8 +71,9 @@ const SiteHeader = ({ history }) => {
               onChange={inputHandler}
               onKeyUp={(e) => {
                 if (e.key === "Enter") {
-                  navigate(`/search/${inputText}`);
-              }}}
+                  searchMovies();
+                }
+              }}
               variant="outlined"
               color="secondary"
               size="small"
