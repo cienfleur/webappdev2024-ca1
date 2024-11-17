@@ -11,12 +11,15 @@ import { useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import TextField from '@mui/material/TextField';
+import List from '@mui/material/List';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 const SiteHeader = ({ history }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const [inputText, setInputText] = useState("");
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -38,6 +41,14 @@ const SiteHeader = ({ history }) => {
     setAnchorEl(event.currentTarget);
   };
 
+  let inputHandler = (e) => {
+
+    var lowerCase = e.target.value.toLowerCase();
+
+    setInputText(lowerCase);
+
+  };
+
   return (
     <>
       <AppBar position="fixed" color="secondary">
@@ -48,6 +59,21 @@ const SiteHeader = ({ history }) => {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             All you ever wanted to know about Movies!
           </Typography>
+          <div className="search">
+            <TextField
+              id="outlined-basic"
+              label="Search"
+              onChange={inputHandler}
+              onKeyUp={(e) => {
+                if (e.key === "Enter") {
+                  navigate(`/search/${inputText}`);
+              }}}
+              variant="outlined"
+              color="secondary"
+              size="small"
+              fullWidth
+            />
+          </div>
             {isMobile ? (
               <>
                 <IconButton
