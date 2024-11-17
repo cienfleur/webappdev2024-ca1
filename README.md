@@ -7,6 +7,11 @@ Student ID: 20102083
 A web app developed using React and the TMDB API to implement a local web server that can display movies and movie details, as well as allow the user to view curate a list of favorites and movies that they plan to watch, akin to Letterboxd or IMDB.
 
 ## Features (WIP)
+Features that were added on top of the original react-movies-lab app:
+- Search bar, allowing you to search for movies according to a specific query
+- Additional sorting filters added to movie list views
+- Pagination of movie list view pages, allowing you to browse through more than just the first page of results
+- Movie details page lists cast, recommended movies below, following a responsive UI to allow for resizing of window
 ### To-do
 - [ ] Two additional static endpoints (TBD)
 - [ ] Parameterized endpoints
