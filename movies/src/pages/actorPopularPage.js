@@ -8,7 +8,7 @@ import AddMustWatchIcon from '../components/cardIcons/addMustWatch'
 
 const ActorPopularPage = (props) => {
 
-  const {  data, error, isLoading, isError }  = useQuery('upcoming', getPopularActors)
+  const {  data, error, isLoading, isError }  = useQuery('popular_actors', getPopularActors)
 
   if (isLoading) {
     return <Spinner />
