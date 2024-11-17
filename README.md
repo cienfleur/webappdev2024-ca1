@@ -32,8 +32,8 @@ API endpoints that were added on top of the original react-movies-lab app:
 Routes that were added on top of the original react-movies-lab app:
 
 - /movies/popular - static endpoint, lists top rated movies (slight misnomer)
-- actors - static endpoint, lists popular actors
-- actors/:id - parameterized endpoint, shows details about a specific actor
+- /actors - static endpoint, lists popular actors
+- /actors/:id - parameterized endpoint, shows details about a specific actor
 - /movies/:id/recommendations - parameterized endpoint, lists recommended movies using a movie id as a parameter
 
 ## Independent learning
