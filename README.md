@@ -14,13 +14,13 @@ Features that were added on top of the original react-movies-lab app:
 - Movie details page lists cast
 - Added actor page, includes movies they've acted in which allows for linking between movies and actors
 ### To-do
-- [ ] Two additional static endpoints (TBD)
+- [x] Two additional static endpoints (top movies + popular actors)
 - [ ] Parameterized endpoints
-- [ ] Caching with react-query on all endpoints
+- [x] Caching with react-query on all endpoints
 - [ ] Implementation of filtering, sorting/searching features
 - [ ] Implement responsive UI layout
 - [ ] Third-party authentication with Firebase
-- [ ] Develop README.md further 
+- [x] Develop README.md further 
 
 ## Setup requirements
 In order to host clone and use this repository for yourself:

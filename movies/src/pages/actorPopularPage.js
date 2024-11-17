@@ -1,6 +1,6 @@
 import React from "react";
-import { getUpcomingMovies } from "../api/tmdb-api";
-import PageTemplate from '../components/templateMovieListPage';
+import { getPopularActors } from "../api/tmdb-api";
+import PageTemplate from '../components/templateActorListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddMustWatchIcon from '../components/cardIcons/addMustWatch'
@@ -8,7 +8,7 @@ import AddMustWatchIcon from '../components/cardIcons/addMustWatch'
 
 const ActorPopularPage = (props) => {
 
-  const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcomingMovies)
+  const {  data, error, isLoading, isError }  = useQuery('upcoming', getPopularActors)
 
   if (isLoading) {
     return <Spinner />
@@ -17,19 +17,19 @@ const ActorPopularPage = (props) => {
   if (isError) {
     return <h1>{error.message}</h1>
   }  
-  const movies = data.results;
+  const actors = data.results;
 
   // Redundant, but necessary to avoid app crashing.
-  const mustWatch = movies.filter(m => m.mustWatch)
+  const mustWatch = actors.filter(m => m.mustWatch)
   localStorage.setItem('mustWatch', JSON.stringify(mustWatch))
-  const addMustWatch = (movieId) => true 
+  const addMustWatch = (actorId) => true 
 
   return (
     <PageTemplate
-      title="Upcoming Movies"
-      movies={movies}
-      action={(movie) => {
-        return <AddMustWatchIcon movie={movie} />
+      title="Popular Actors"
+      actors={actors}
+      action={(actor) => {
+        return <AddMustWatchIcon actor={actor} />
       }}
     />
 );

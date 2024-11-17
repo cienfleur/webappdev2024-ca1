@@ -1,7 +1,7 @@
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MonetizationIcon from "@mui/icons-material/MonetizationOn";
+import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
+import WcIcon from '@mui/icons-material/Wc';
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
@@ -30,44 +30,27 @@ const ActorDetails = ({ actor }) => {  // Don't miss this!
       </Typography>
 
       <Typography variant="h6" component="p">
-        {actor.overview}
+        {actor.biography}
       </Typography>
 
-      <Paper 
-        component="ul" 
-        sx={{...root}}
-      >
-        <li>
-          <Chip label="Genres" sx={{...chip}} color="primary" />
-        </li>
-        {actor.genres.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} sx={{...chip}} />
-          </li>
-        ))}
-      </Paper>
       <Paper component="ul" sx={{...root}}>
-        <Chip icon={<AccessTimeIcon />} label={`${actor.runtime} min.`} />
+        <Chip icon={<CalendarIcon />} label={`${actor.birthday}`} />
         <Chip
-          icon={<MonetizationIcon />}
-          label={`${actor.revenue.toLocaleString()}`}
+          icon={<WcIcon />}
+          label={`${actor.gender.toLocaleString() == 2 ? 'Male'
+            : actor.gender.toLocaleString() == 1 ? 'Female'
+            : actor.gender.toLocaleString() == 3 ? 'Non-binary' 
+            : 'Not specified'}`}
         />
         <Chip
           icon={<StarRate />}
-          label={`${actor.vote_average} (${actor.vote_count}`}
+          label={`${actor.popularity}`}
         />
-        <Chip label={`Released: ${actor.release_date}`} />
+        <br />
+        <Chip label={`Birth place: ${actor.place_of_birth}`} />
       </Paper>
-      <Paper component="ul" sx={{...root}}>
-        <li>
-          <Chip label="Production Countries" sx={{...chip}} color="primary" />
-        </li>
-        {actor.production_countries.map((p) => (
-          <li key={p.name}>
-            <Chip label={p.name} sx={{...chip}} />
-          </li>
-        ))}
-      </Paper>
+        <br />
+
       <Fab
         color="secondary"
         variant="extended"
